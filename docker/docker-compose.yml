@@ -1,0 +1,34 @@
+version: "2"
+
+services:
+
+  my-rabbit:
+    container_name: my-rabbit
+    image: rabbitmq:3.7-management
+    hostname: rabbitmq
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    volumes:
+      - ./rabbitmq:/etc/rabbitmq
+#    volumes:
+#      - ./definitions.json:/etc/rabbitmq/definitions.json:ro
+#      - ./rabbitmq.conf:/etc/rabbitmq/rabbitmq.conf:ro
+    environment:
+      RABBITMQ_DEFAULT_USER: guest
+      RABBITMQ_DEFAULT_PASS: guest
+      RABBITMQ_NODENAME: my-rabbit
+
+  command:
+    container_name: command
+    image: spabbitecomm/command
+    ports:
+     - "8080:8080"
+    depends_on:
+     - my-rabbit
+         
+  query:
+    container_name: query
+    image: spabbitecomm/query
+    depends_on:
+     - my-rabbit
