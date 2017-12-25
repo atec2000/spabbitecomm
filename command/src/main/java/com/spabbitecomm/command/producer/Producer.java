@@ -12,10 +12,10 @@ public class Producer {
 	@Autowired
 	private AmqpTemplate amqpTemplate;
 	
-	@Value("${jsa.rabbitmq.exchange}")
+	@Value("${spabbitecomm.rabbitmq.exchange}")
 	private String exchange;
 	
-	@Value("${jsa.rabbitmq.routingkey}")
+	@Value("${spabbitecomm.rabbitmq.routingkey}")
 	private String routingkey;
 
 	public void produceUserOrderCreatedEvent(UserOrder userOrder){

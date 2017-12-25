@@ -9,20 +9,20 @@ spring:
     username: guest
     password: guest
 
-jsa:
+spabbitecomm:
   rabbitmq:
-    exchange: jsa.exchange
-    queue: jsa.queue
-    routingkey: jsa.routingkey
+    exchange: order.exchange
+    queue: order.query.queue
+    routingkey: order.created
 
 logging:
-  file: jsa-app.log
+  file: spabbitecomm-command.log
   level:
     root: INFO
     org.springframework: INFO
-    com.spabbit: DEBUG
+    com.spabbitecomm: DEBUG
     
 info:
   app:
-    name: spabbit - producer
-    description: spabbit - producer
+    name: spabbitecomm - producer
+    description: spabbitecomm - producer

@@ -39,7 +39,7 @@
   ],
   "queues":[
     {
-      "name":"jsa.queue",
+      "name":"order.query.queue",
       "vhost":"/",
       "durable":true,
       "auto_delete":false,
@@ -50,9 +50,9 @@
   ],
   "exchanges":[
     {
-      "name":"jsa.exchange",
+      "name":"order.exchange",
       "vhost":"/",
-      "type":"direct",
+      "type":"topic",
       "durable":true,
       "auto_delete":false,
       "internal":false,
@@ -63,11 +63,11 @@
   ],
   "bindings":[
     {
-      "source":"jsa.exchange",
+      "source":"order.exchange",
       "vhost":"/",
-      "destination":"jsa.queue",
+      "destination":"order.query.queue",
       "destination_type":"queue",
-      "routing_key":"jsa.routingkey",
+      "routing_key":"order.*",
       "arguments":{
 
       }

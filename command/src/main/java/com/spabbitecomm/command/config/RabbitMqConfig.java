@@ -15,7 +15,8 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class RabbitMqConfig {
-	
+
+    /*
 	@Value("${jsa.rabbitmq.queue}")
 	String queueName;
 	
@@ -39,6 +40,7 @@ public class RabbitMqConfig {
     Binding binding(Queue queue, DirectExchange exchange) {
         return BindingBuilder.bind(queue).to(exchange).with(routingkey);
     }
+    */
 	
     @Bean
     public MessageConverter jsonMessageConverter(){

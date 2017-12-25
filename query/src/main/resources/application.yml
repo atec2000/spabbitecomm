@@ -6,12 +6,12 @@ spring:
     username: guest
     password: guest
 
-jsa:
+spabbitecomm:
   rabbitmq:
-    queue: jsa.queue
+    queue: order.query.queue
 
 logging:
-  file: jsa-app.log
+  file: spabbitecomm-query.log
   level:
     root: INFO
     org.springframework: INFO
@@ -19,5 +19,5 @@ logging:
     
 info:
   app:
-    name: spabbit - query
-    description: spabbit - query
+    name: spabbitecomm - query
+    description: spabbitecomm - query

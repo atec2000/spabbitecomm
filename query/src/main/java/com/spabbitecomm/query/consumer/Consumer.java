@@ -7,10 +7,9 @@ import org.springframework.stereotype.Component;
 @Component
 public class Consumer {
 
-    @RabbitListener(queues="${jsa.rabbitmq.queue}", containerFactory="jsaFactory")
+    @RabbitListener(queues="${spabbitecomm.rabbitmq.queue}", containerFactory="rabbitListenerContainerFactory")
     public void recievedUserOrderCreatedEvent(UserOrder userOrder) {
-        System.out.println("Recieved UserOrderCreatedEvent: " + userOrder);
-        System.out.println("order id: " + userOrder.getId());
+        System.out.println("Recieved UserOrderCreatedEvent: order id: " + userOrder.getId());
     }
 
 }
