@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="command" />
         <module name="common" />
+        <module name="common-order" />
         <module name="producer" />
         <module name="query" />
       </profile>
@@ -15,6 +16,7 @@
     <bytecodeTargetLevel>
       <module name="command" target="1.8" />
       <module name="common" target="1.8" />
+      <module name="common-order" target="1.8" />
       <module name="producer" target="1.8" />
       <module name="query" target="1.8" />
       <module name="spabbitecomm" target="1.8" />

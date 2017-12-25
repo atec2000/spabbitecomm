@@ -1,7 +1,8 @@
 package com.spabbitecomm.command.controller;
 
 import com.spabbitecomm.command.producer.Producer;
-import com.spabbitecomm.common.event.model.Company;
+import com.spabbitecomm.command.service.UserOrderService;
+import com.spabbitecomm.common.order.event.model.UserOrder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,15 +22,20 @@ public class EventController {
     @Autowired
     Producer producer;
 
-    @RequestMapping(value = "/events", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
+    @Autowired
+    UserOrderService userOrderService;
+
+    @RequestMapping(value = "/orders", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(value = HttpStatus.CREATED)
-    public void create(@RequestBody Company company) {
-        LOG.debug(Company.class.getSimpleName() + " request received");
+    public void createUserOrder(@RequestBody UserOrder userOrder) {
+        LOG.debug(UserOrder.class.getSimpleName() + " request received");
+
+        UserOrder userOrderCreated = userOrderService.createUserOrder(userOrder);
 
         /*
          * send message to RabbitMQ
          */
-        producer.produce(company);
+        producer.produceUserOrderCreatedEvent(userOrderCreated);
 
     }
         

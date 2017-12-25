@@ -13,6 +13,7 @@
 
 	<modules>
 		<module>common</module>
+		<module>common-order</module>
 		<module>command</module>
 		<module>query</module>
 		<!-- ><module>product</module><-->
