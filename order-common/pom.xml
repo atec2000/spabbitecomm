@@ -3,8 +3,8 @@
 	<modelVersion>4.0.0</modelVersion>
 
     <groupId>com.spabbitecomm</groupId>
-	<artifactId>common-order</artifactId>
-	<name>common-order</name>
+	<artifactId>order-common</artifactId>
+	<name>order-common</name>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 

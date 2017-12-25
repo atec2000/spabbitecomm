@@ -15,9 +15,9 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class EventController {
+public class OrderController {
 	
-    private static final Logger LOG = LoggerFactory.getLogger(EventController.class);
+    private static final Logger LOG = LoggerFactory.getLogger(OrderController.class);
 
     @Autowired
     Producer producer;

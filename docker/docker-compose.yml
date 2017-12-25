@@ -2,6 +2,16 @@ version: "2"
 
 services:
 
+  my-mysql:
+    container_name: my-mysql
+    image: mysql/mysql-server:5.6
+    ports:
+     - "3306:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=order
+      - MYSQL_ROOT_HOST=%
+
   my-rabbit:
     container_name: my-rabbit
     image: rabbitmq:3.7-management
@@ -20,15 +30,15 @@ services:
       RABBITMQ_NODENAME: my-rabbit
 
   command:
-    container_name: command
-    image: spabbitecomm/command
+    container_name: order-command
+    image: spabbitecomm/order-command
     ports:
      - "8080:8080"
     depends_on:
      - my-rabbit
          
   query:
-    container_name: query
-    image: spabbitecomm/query
+    container_name: order-query
+    image: spabbitecomm/order-query
     depends_on:
      - my-rabbit
