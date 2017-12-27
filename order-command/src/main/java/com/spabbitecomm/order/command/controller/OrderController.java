@@ -1,7 +1,7 @@
-package com.spabbitecomm.command.controller;
+package com.spabbitecomm.order.command.controller;
 
-import com.spabbitecomm.command.producer.Producer;
-import com.spabbitecomm.command.service.UserOrderService;
+import com.spabbitecomm.order.command.producer.Producer;
+import com.spabbitecomm.order.command.service.UserOrderService;
 import com.spabbitecomm.common.order.event.model.UserOrder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -25,9 +25,11 @@ public class OrderController {
     @Autowired
     UserOrderService userOrderService;
 
-    @RequestMapping(value = "/orders", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(value = "/orders", method = RequestMethod.POST,
+            consumes = MediaType.APPLICATION_JSON_UTF8_VALUE,
+            produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     @ResponseStatus(value = HttpStatus.CREATED)
-    public void createUserOrder(@RequestBody UserOrder userOrder) {
+    public UserOrder createUserOrder(@RequestBody UserOrder userOrder) {
         LOG.debug(UserOrder.class.getSimpleName() + " request received");
 
         UserOrder userOrderCreated = userOrderService.createUserOrder(userOrder);
@@ -37,6 +39,7 @@ public class OrderController {
          */
         producer.produceUserOrderCreatedEvent(userOrderCreated);
 
+        return userOrderCreated;
     }
         
 }

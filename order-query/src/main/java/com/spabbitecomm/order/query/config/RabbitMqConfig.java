@@ -1,4 +1,4 @@
-package com.spabbitecomm.query.config;
+package com.spabbitecomm.order.query.config;
 
 import org.springframework.amqp.rabbit.config.SimpleRabbitListenerContainerFactory;
 import org.springframework.amqp.rabbit.connection.ConnectionFactory;

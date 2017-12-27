@@ -1,4 +1,4 @@
-package com.spabbitecomm.command;
+package com.spabbitecomm.order.command;
 
 import java.net.InetAddress;
 import java.net.UnknownHostException;

@@ -1,4 +1,4 @@
-package com.spabbitecomm.command.producer;
+package com.spabbitecomm.order.command.producer;
 
 import com.spabbitecomm.common.order.event.model.UserOrder;
 import org.springframework.amqp.core.AmqpTemplate;

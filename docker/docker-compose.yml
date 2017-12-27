@@ -36,7 +36,8 @@ services:
      - "8080:8080"
     depends_on:
      - my-rabbit
-         
+     - my-mysql
+
   query:
     container_name: order-query
     image: spabbitecomm/order-query

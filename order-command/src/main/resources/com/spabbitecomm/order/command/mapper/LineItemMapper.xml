@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.spabbitecomm.order.command.mapper.LineItemMapper">
+
+	<insert id="insert" keyColumn="id" keyProperty="id"
+            parameterType="com.spabbitecomm.common.order.event.model.LineItem" useGeneratedKeys="true">
+		insert into line_item (
+		  id,
+		  user_order_id,
+		  name,
+		  quantity,
+		  unit_price
+		) values (
+		  #{id},
+		  #{userOrderId},
+		  #{name},
+		  #{quantity},
+		  #{unitPrice}
+		)
+	</insert>
+
+</mapper>

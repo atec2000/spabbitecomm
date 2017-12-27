@@ -2,12 +2,19 @@ package com.spabbitecomm.common.order.event.model;
 
 import java.math.BigDecimal;
 
-public class LineItem {
+public class LineItem extends Model {
 
+	private String userOrderId;
 	private String name;
 	private Integer quantity;
 	private BigDecimal unitPrice;
 
+	public String getUserOrderId() {
+		return userOrderId;
+	}
+	public void setUserOrderId(String userOrderId) {
+		this.userOrderId = userOrderId;
+	}
 	public String getName() {
 		return name;
 	}

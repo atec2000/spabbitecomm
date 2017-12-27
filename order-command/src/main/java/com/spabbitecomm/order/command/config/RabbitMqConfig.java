@@ -1,4 +1,4 @@
-package com.spabbitecomm.command.config;
+package com.spabbitecomm.order.command.config;
 
 import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.amqp.core.Binding;

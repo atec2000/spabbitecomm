@@ -1,4 +1,4 @@
-package com.spabbitecomm.query.consumer;
+package com.spabbitecomm.order.query.consumer;
 
 import com.spabbitecomm.common.order.event.model.UserOrder;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;

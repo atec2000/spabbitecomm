@@ -8,12 +8,21 @@ spring:
     host: my-rabbit
     username: guest
     password: guest
+  datasource:
+    url: jdbc:mysql://my-mysql:3306/order
+    driverClassName: com.mysql.jdbc.Driver
+    username: root
+    password: root
+    validation-query: SELECT 1
 
 spabbitecomm:
   rabbitmq:
     exchange: order.exchange
     queue: order.query.queue
     routingkey: order.created
+
+mybatis:
+  config-location: classpath:mybatis-config.xml
 
 logging:
   file: spabbitecomm-command.log

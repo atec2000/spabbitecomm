@@ -1,7 +1,5 @@
 package com.spabbitecomm.common.order.event.model;
 
-import com.spabbitecomm.common.order.event.model.Model;
-
 import java.util.List;
 
 public class UserOrder extends Model {
@@ -15,7 +13,7 @@ public class UserOrder extends Model {
     public UserOrder() {
     }
 
-    public UserOrder(String id, String name, List<LineItem> lineItemModels) {
+    public UserOrder(String id, String name, List<LineItem> lineItems) {
 		super(id);
         this.name = name;
         this.lineItems = lineItems;
