@@ -4,13 +4,13 @@
 <mapper namespace="com.spabbitecomm.order.command.mapper.UserOrderMapper">
 
 	<insert id="insert" keyColumn="id" keyProperty="id"
-            parameterType="com.spabbitecomm.common.order.event.model.UserOrder" useGeneratedKeys="true">
+            parameterType="com.spabbitecomm.common.model.UserOrderModel" useGeneratedKeys="true">
 		insert into user_order (
 		  id,
-		  name
+		  comment
 		) values (
 		  #{id},
-		  #{name}
+		  #{comment}
 		)
 	</insert>
 

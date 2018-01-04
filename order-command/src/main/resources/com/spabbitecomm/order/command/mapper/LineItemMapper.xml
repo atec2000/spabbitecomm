@@ -4,17 +4,19 @@
 <mapper namespace="com.spabbitecomm.order.command.mapper.LineItemMapper">
 
 	<insert id="insert" keyColumn="id" keyProperty="id"
-            parameterType="com.spabbitecomm.common.order.event.model.LineItem" useGeneratedKeys="true">
+            parameterType="com.spabbitecomm.common.model.LineItemModel" useGeneratedKeys="true">
 		insert into line_item (
 		  id,
 		  user_order_id,
-		  name,
+		  product_id,
+		  product_name,
 		  quantity,
 		  unit_price
 		) values (
 		  #{id},
 		  #{userOrderId},
-		  #{name},
+		  #{productId},
+		  #{productName},
 		  #{quantity},
 		  #{unitPrice}
 		)

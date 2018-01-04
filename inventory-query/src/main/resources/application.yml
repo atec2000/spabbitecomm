@@ -1,0 +1,26 @@
+server:
+  port: ${PORT:7001}
+
+spring:
+  application:
+    name: inventory-query
+  rabbitmq:
+    host: my-rabbit
+    username: guest
+    password: guest
+
+spabbitecomm:
+  rabbitmq:
+    productCreatedQueue: inventory.query.product.created.queue
+
+logging:
+  file: spabbitecomm-inventory-query.log
+  level:
+    root: INFO
+    org.springframework: INFO
+    com.spabbitecomm: DEBUG
+    
+info:
+  app:
+    name: spabbitecomm - inventory-query
+    description: spabbitecomm - inventory-query

@@ -2,16 +2,6 @@ version: "2"
 
 services:
 
-  my-mysql:
-    container_name: my-mysql
-    image: mysql/mysql-server:5.6
-    ports:
-     - "3306:3306"
-    environment:
-      - MYSQL_ROOT_PASSWORD=root
-      - MYSQL_DATABASE=order
-      - MYSQL_ROOT_HOST=%
-
   my-rabbit:
     container_name: my-rabbit
     image: rabbitmq:3.7-management
@@ -21,25 +11,55 @@ services:
       - "15672:15672"
     volumes:
       - ./rabbitmq:/etc/rabbitmq
-#    volumes:
-#      - ./definitions.json:/etc/rabbitmq/definitions.json:ro
-#      - ./rabbitmq.conf:/etc/rabbitmq/rabbitmq.conf:ro
     environment:
       RABBITMQ_DEFAULT_USER: guest
       RABBITMQ_DEFAULT_PASS: guest
       RABBITMQ_NODENAME: my-rabbit
 
-  command:
+  inventory-mongodb:
+    image: mongo:2.4
+    container_name: inventory-mongodb
+    ports:
+     - "27017:27017"
+
+  inventory-command:
+    container_name: inventory-command
+    image: spabbitecomm/inventory-command
+    ports:
+     - "7000:7000"
+    depends_on:
+     - my-rabbit
+     - inventory-mongodb
+
+  inventory-elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:6.1.1
+    container_name: inventory-elasticsearch
+    ports:
+     - "9200:9200"
+
+  inventory-query:
+    container_name: inventory-query
+    image: spabbitecomm/inventory-query
+    ports:
+     - "7001:7001"
+    depends_on:
+     - my-rabbit
+
+  order-mysql:
+    container_name: order-mysql
+    image: mysql/mysql-server:5.6
+    ports:
+     - "3306:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=order
+      - MYSQL_ROOT_HOST=%
+
+  order-command:
     container_name: order-command
     image: spabbitecomm/order-command
     ports:
-     - "8080:8080"
+     - "7050:7050"
     depends_on:
      - my-rabbit
-     - my-mysql
-
-  query:
-    container_name: order-query
-    image: spabbitecomm/order-query
-    depends_on:
-     - my-rabbit
+     - order-mysql

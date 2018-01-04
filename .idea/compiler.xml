@@ -9,10 +9,14 @@
         <module name="command" />
         <module name="common" />
         <module name="common-order" />
+        <module name="inventory-command" />
+        <module name="inventory-common" />
+        <module name="inventory-query" />
         <module name="order-command" />
         <module name="order-common" />
         <module name="order-query" />
         <module name="producer" />
+        <module name="product-command" />
         <module name="query" />
       </profile>
     </annotationProcessing>
@@ -20,10 +24,14 @@
       <module name="command" target="1.8" />
       <module name="common" target="1.8" />
       <module name="common-order" target="1.8" />
+      <module name="inventory-command" target="1.8" />
+      <module name="inventory-common" target="1.8" />
+      <module name="inventory-query" target="1.8" />
       <module name="order-command" target="1.8" />
       <module name="order-common" target="1.8" />
       <module name="order-query" target="1.8" />
       <module name="producer" target="1.8" />
+      <module name="product-command" target="1.8" />
       <module name="query" target="1.8" />
       <module name="spabbitecomm" target="1.8" />
     </bytecodeTargetLevel>

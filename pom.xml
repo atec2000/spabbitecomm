@@ -13,10 +13,11 @@
 
 	<modules>
 		<module>common</module>
+		<module>inventory-common</module>
+		<module>inventory-command</module>
+		<module>inventory-query</module>
 		<module>order-common</module>
 		<module>order-command</module>
-		<module>order-query</module>
-		<!-- ><module>product</module><-->
 	</modules>
 
 	<parent>

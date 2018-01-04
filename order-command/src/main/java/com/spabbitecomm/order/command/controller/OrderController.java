@@ -1,8 +1,7 @@
 package com.spabbitecomm.order.command.controller;
 
-import com.spabbitecomm.order.command.producer.Producer;
 import com.spabbitecomm.order.command.service.UserOrderService;
-import com.spabbitecomm.common.order.event.model.UserOrder;
+import com.spabbitecomm.common.model.UserOrderModel;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,26 +19,18 @@ public class OrderController {
     private static final Logger LOG = LoggerFactory.getLogger(OrderController.class);
 
     @Autowired
-    Producer producer;
-
-    @Autowired
     UserOrderService userOrderService;
 
     @RequestMapping(value = "/orders", method = RequestMethod.POST,
             consumes = MediaType.APPLICATION_JSON_UTF8_VALUE,
             produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     @ResponseStatus(value = HttpStatus.CREATED)
-    public UserOrder createUserOrder(@RequestBody UserOrder userOrder) {
-        LOG.debug(UserOrder.class.getSimpleName() + " request received");
+    public UserOrderModel createUserOrder(@RequestBody UserOrderModel userOrderModel) {
+        LOG.info(UserOrderModel.class.getSimpleName() + " request received");
 
-        UserOrder userOrderCreated = userOrderService.createUserOrder(userOrder);
+        UserOrderModel userOrderModelCreated = userOrderService.createUserOrder(userOrderModel);
 
-        /*
-         * send message to RabbitMQ
-         */
-        producer.produceUserOrderCreatedEvent(userOrderCreated);
-
-        return userOrderCreated;
+        return userOrderModelCreated;
     }
         
 }

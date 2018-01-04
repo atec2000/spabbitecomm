@@ -12,8 +12,10 @@ cd ..
 
 
 ```bash
-$ curl -v --header "Content-Type: application/json" --header "Accept: */*" "http://127.0.0.1:8080/orders" -d '{"name":"order name 1", "lineItems":[{"name":"name 1","quantity":"3","unitPrice":"12.0"},{"name":"name 2","quantity":"4","unitPrice":"13.0"}]}'
+$ curl -v --header "Content-Type: application/json" --header "Accept: */*" "http://127.0.0.1:7000/products" -d '{"id":"1","name":"iPhone X","quantity":"200","unitPrice":"1500.00"}'
+$ curl -v --header "Content-Type: application/json" --header "Accept: */*" "http://127.0.0.1:7000/products" -d '{"id":"2","name":"Huawei Mate Pro 10","quantity":"200","unitPrice":"1300.00"}'
+$ curl -v --header "Content-Type: application/json" --header "Accept: */*" "http://127.0.0.1:7050/orders" -d '{"comment":"order comment 1", "lineItems":[{"productId":"1","quantity":"5"},{"productId":"2","quantity":"8"}]}'
 ```
 ```bash
 docker exec -it my-mysql mysql -h localhost -u root -p
-```
+```````````

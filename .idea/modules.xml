@@ -3,9 +3,11 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/common/common.iml" filepath="$PROJECT_DIR$/common/common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/inventory-common/inventory-common.iml" filepath="$PROJECT_DIR$/inventory-common/inventory-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/inventory-query/inventory-query.iml" filepath="$PROJECT_DIR$/inventory-query/inventory-query.iml" />
       <module fileurl="file://$PROJECT_DIR$/order-command/order-command.iml" filepath="$PROJECT_DIR$/order-command/order-command.iml" />
       <module fileurl="file://$PROJECT_DIR$/order-common/order-common.iml" filepath="$PROJECT_DIR$/order-common/order-common.iml" />
-      <module fileurl="file://$PROJECT_DIR$/order-query/order-query.iml" filepath="$PROJECT_DIR$/order-query/order-query.iml" />
+      <module fileurl="file://$PROJECT_DIR$/inventory-command/order-query.iml" filepath="$PROJECT_DIR$/inventory-command/order-query.iml" />
       <module fileurl="file://$PROJECT_DIR$/order-command/producer.iml" filepath="$PROJECT_DIR$/order-command/producer.iml" />
       <module fileurl="file://$PROJECT_DIR$/spabbitecomm.iml" filepath="$PROJECT_DIR$/spabbitecomm.iml" />
     </modules>
