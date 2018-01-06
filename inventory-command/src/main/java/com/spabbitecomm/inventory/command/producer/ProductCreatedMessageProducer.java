@@ -1,7 +1,6 @@
 package com.spabbitecomm.inventory.command.producer;
 
-import com.spabbitecomm.common.inventory.model.ProductModel;
-import com.spabbitecomm.inventory.command.Model.Product;
+import com.spabbitecomm.inventory.command.model.Product;
 import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;

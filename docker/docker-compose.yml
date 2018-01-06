@@ -32,10 +32,14 @@ services:
      - inventory-mongodb
 
   inventory-elasticsearch:
-    image: docker.elastic.co/elasticsearch/elasticsearch:6.1.1
+    #image: docker.elastic.co/elasticsearch/elasticsearch:6.1.1
+    image: elasticsearch:2.4
     container_name: inventory-elasticsearch
+    environment:
+      - cluster.name=elasticsearch
     ports:
      - "9200:9200"
+     - "9300:9300"
 
   inventory-query:
     container_name: inventory-query
@@ -44,6 +48,7 @@ services:
      - "7001:7001"
     depends_on:
      - my-rabbit
+     - inventory-elasticsearch
 
   order-mysql:
     container_name: order-mysql

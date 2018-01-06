@@ -1,7 +1,7 @@
 package com.spabbitecomm.inventory.command.controller;
 
 import com.spabbitecomm.common.inventory.model.ProductModel;
-import com.spabbitecomm.inventory.command.Model.Product;
+import com.spabbitecomm.inventory.command.model.Product;
 import com.spabbitecomm.inventory.command.service.ProductService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

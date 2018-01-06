@@ -13,6 +13,11 @@ spabbitecomm:
   rabbitmq:
     productCreatedQueue: inventory.query.product.created.queue
 
+elasticsearch:
+  clustername: elasticsearch
+  host: inventory-elasticsearch
+  port: 9300
+
 logging:
   file: spabbitecomm-inventory-query.log
   level:
