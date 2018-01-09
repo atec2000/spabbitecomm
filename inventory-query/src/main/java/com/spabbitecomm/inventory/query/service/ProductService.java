@@ -29,8 +29,8 @@ public class ProductService {
         return productRepository.findAll();
     }
 
-    public Page<Product> findByName(String name, PageRequest pageRequest) {
-        return productRepository.findByName(name, pageRequest);
-    }
+//    public Page<Product> findByName(String name, PageRequest pageRequest) {
+//        return productRepository.findByName(name, pageRequest);
+//    }
 
 }

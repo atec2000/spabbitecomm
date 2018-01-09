@@ -21,6 +21,7 @@ services:
     container_name: inventory-mongodb
     ports:
      - "27017:27017"
+     - "28017:28017"
 
   inventory-command:
     container_name: inventory-command

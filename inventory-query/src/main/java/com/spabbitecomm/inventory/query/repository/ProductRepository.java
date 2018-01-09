@@ -7,6 +7,6 @@ import org.springframework.data.domain.Pageable;
 
 public interface ProductRepository extends ElasticsearchRepository<Product, String> {
 
-    Page<Product> findByName(String Name, Pageable pageable);
+//    Page<Product> findByName(String Name, Pageable pageable);
 
 }
