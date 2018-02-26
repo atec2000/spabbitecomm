@@ -18,6 +18,7 @@
 		<module>inventory-query</module>
 		<module>order-common</module>
 		<module>order-command</module>
+		<module>order-cron</module>
 	</modules>
 
 	<parent>

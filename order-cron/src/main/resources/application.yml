@@ -1,0 +1,39 @@
+spring:
+  profiles:
+    active: dev
+  application:
+    name: order-cron
+  rabbitmq:
+    host: my-rabbit
+    username: guest
+    password: guest
+  #datasource:
+  #  url: jdbc:mysql://order-mysql:3306/order
+  #  driverClassName: com.mysql.jdbc.Driver
+  #  username: root
+  #  password: root
+  #  validation-query: SELECT 1
+  #  continue-on-error: true
+
+quartz:
+  enabled: true
+
+spabbitecomm:
+  rabbitmq:
+    orderExchange: order.exchange
+    orderCreatedRoutingKey: order.created
+
+mybatis:
+  config-location: classpath:mybatis-config.xml
+
+logging:
+  file: order-cron.log
+  level:
+    root: INFO
+    org.springframework: INFO
+    com.spabbitecomm: DEBUG
+    
+info:
+  app:
+    name: spabbitecomm - order cron
+    description: spabbitecomm - order cron

@@ -24,7 +24,7 @@ mybatis:
   config-location: classpath:mybatis-config.xml
 
 logging:
-  file: spabbitecomm-command.log
+  file: order-command.log
   level:
     root: INFO
     org.springframework: INFO

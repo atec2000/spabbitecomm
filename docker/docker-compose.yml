@@ -69,3 +69,10 @@ services:
     depends_on:
      - my-rabbit
      - order-mysql
+
+  order-cron:
+    container_name: order-cron
+    image: spabbitecomm/order-cron
+    depends_on:
+     - my-rabbit
+     - order-mysql
